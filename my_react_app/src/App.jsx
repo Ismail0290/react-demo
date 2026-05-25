@@ -1,22 +1,16 @@
-import Button from "./components/Button";
-const name = "ismail";
-const isStudent = true;
-const num = 7;
-const hasFess = true;
+import { useState } from 'react';
+
 function App() {
-  
+  const [count, setCount] = useState(0);
+
   return (
     <>
-      App
-      <Button />
-      <h2>{name.toUpperCase()} </h2>
-      <p>{num}</p>
-      {isStudent ? <p>Currently Studying</p> : <p>Working Professional</p>}
-      {hasFess ? <button>Pay Fees</button> : <p></p>}
+      <h1>Count: {count}</h1>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setCount(count - 1)}>Decrement</button>
+      <button onClick={() => setCount(0)}>Reset</button>
     </>
-    // JSX expression 
-    
-  );
+  )
 }
 
-export default App;
+export default App
